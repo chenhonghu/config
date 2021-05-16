@@ -1,0 +1,10 @@
+server:
+  port: 8300
+spring:
+  application:
+    name: shoping-order
+eureka:
+  client:
+    service-url:
+      defaultZone:  http://127.0.0.1:8000/eureka,http://127.0.0.1:8001/eureka,http://127.0.0.1:8002/eureka
+

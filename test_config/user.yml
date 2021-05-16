@@ -1,0 +1,35 @@
+server:
+  port: 8200
+spring:
+  application:
+    name: shoping-user
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cloud_test?serverTimezone=GMT%2B8
+    username: root
+    password: a
+  jpa:
+    show-sql: true
+    hibernate.ddl-auto: update
+eureka:
+  client:
+    serviceUrl:
+      defaultZone:  http://127.0.0.1:8000/eureka,http://127.0.0.1:8001/eureka,http://127.0.0.1:8002/eureka
+---
+server:
+  port: 8201
+spring:
+  profiles: shoping-user-1
+eureka:
+  client:
+    service-url:
+      defaultZone:  http://127.0.0.1:8000/eureka,http://127.0.0.1:8001/eureka,http://127.0.0.1:8002/eureka
+---
+server:
+  port: 8202
+spring:
+  profiles: shoping-user-2
+eureka:
+  client:
+    service-url:
+      defaultZone:  http://127.0.0.1:8000/eureka,http://127.0.0.1:8001/eureka,http://127.0.0.1:8002/eureka
